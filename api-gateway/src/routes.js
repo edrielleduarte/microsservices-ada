@@ -1,12 +1,12 @@
 const { Router } = require('express');
 const SessionHandler = require('./handlers/SessionHandler');
-// const ProfileHandler = require('./handlers/profile-handler')
 const authMiddleware = require('./middlewares/auth');
 const AddressServiceHandler = require('./handlers/AddressHandler');
 const RegisterHandler = require('./handlers/RegisterHandler');
 const OrderHandler = require('./handlers/OrderHandler');
 const routes = new Router();
 
+// Rotas
 routes.get('/address-service', AddressServiceHandler.get);
 routes.post('/address', AddressServiceHandler.post);
 routes.post('/register-service', RegisterHandler.post);
