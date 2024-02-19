@@ -11,7 +11,7 @@ module.exports = async (req, res, next) => {
   const [, token] = bearer.split(' ');
 
   try {
-    const user = jwt.verify(token, JWT_SECRET_KEY); //Call session api
+    const user = jwt.verify(token, JWT_SECRET_KEY);
 
     req.user = user;
 
