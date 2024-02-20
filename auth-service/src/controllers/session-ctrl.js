@@ -7,7 +7,7 @@ class SessionController {
     try {
       const schema = yup.object({
         email: yup.string().email().required(),
-        cpf: yup.string().min(8).max(11).required(),
+        password: yup.string().required(),
       });
 
       if (!(await schema.isValid(req.body))) {
@@ -15,9 +15,8 @@ class SessionController {
       }
 
       const user = await UserService.userExistsByEmail(req.body.email);
-      console.log(user);
 
-      if (!user || !UserService.checkCpf(req.body.cpf, user?.cpf)) {
+      if (!user || !UserService.checkCpf(req.body.password, user?.password)) {
         throw { status: 401, message: 'Invalid Credentials' };
       }
 

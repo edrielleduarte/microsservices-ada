@@ -1,6 +1,6 @@
 const connectionDB = require('../../../db/services/db.service');
-const connectRabbitCtrl = require('../../../notification-service/src/services/smpt-send.service');
-const { AMQP_RABBITMQ_BASE_URL, EMAIL_USER, EMAIL_PASS } = process.env;
+const connectRabbit = require('../../../notification-service/src/services/rabbitmq.service');
+const { AMQP_RABBITMQ_BASE_URL } = process.env;
 
 class UserService {
   static async create({
@@ -14,6 +14,7 @@ class UserService {
     city,
     state,
     country,
+    password
   }) {
     try {
       await connectionDB.createUser({
@@ -27,24 +28,26 @@ class UserService {
         city,
         state,
         country,
+        password
       });
 
       const messagem = ` Olá, Seja Bem Vindo ${name}! 
       Seu cadastro foi realizado com sucesso!
       Qualquer dúvida entre em contato conosco.
       Atenciosamente,
-      Equipe de Cadastro `;
+      Equipe de Ada Edrielle Cadastro `;
 
       const solicitation = {
         email,
         messagem,
       };
 
-      await connectRabbitCtrl.connectRabbit(
+      const nomeFila = 'register';
+
+      await connectRabbit.connectRabbitMQ(
         solicitation,
         AMQP_RABBITMQ_BASE_URL,
-        EMAIL_USER,
-        EMAIL_PASS,
+        nomeFila,
       );
     } catch (error) {
       return error;

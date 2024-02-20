@@ -15,6 +15,7 @@ class UserService {
     city,
     state,
     country,
+    password
   }) {
     try {
       await UserRegister.createDataBaseUser({
@@ -28,6 +29,7 @@ class UserService {
         city,
         state,
         country,
+        password
       });
     } catch (error) {
       throw { status: 400, message: 'Erro ao criar usuário' };

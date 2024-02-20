@@ -1,25 +1,35 @@
 const nodemailer = require('nodemailer');
 
 class SendEmailNotifyClient {
-  static async sendEmailNotifyClient(email, message, emailUser, emailPass) {
+  static async sendEmailNotifyClient(nomeFila, email, message) {
     try {
+      let messagem = '';
+
+      if (nomeFila === 'pedido ifood') {
+        messagem = message;
+      } else if (nomeFila === 'register') {
+        messagem = message;
+      }
+
       const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        service: 'gmail', // testei com gmail
         port: 587,
         auth: {
-          user: emailUser || process.env.EMAIL_USER,
-          pass: emailPass || process.env.EMAIL_PASS,
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
         },
       });
 
+      console.log('Sending email to:', email);
+
       const mailOptions = {
-        from: emailUser || process.env.EMAIL_USER,
+        from: process.env.EMAIL_USER,
         to: email,
-        subject: 'Notification Service',
-        text: message,
+        subject: 'Ada Food Delivery!',
+        text: messagem,
       };
 
-      const notify = await transporter.sendMail(mailOptions);
+      const notify = transporter.sendMail(mailOptions);
       return notify;
     } catch (error) {
       console.log(error);

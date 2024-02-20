@@ -17,7 +17,8 @@ POST: /addres - rota que busca um cep e registra um usuário no banco com o ende
       "cpf": "00000000000",
       "number": "278888888888",
       "cep": "00000000",
-      "country": "Brasil"
+      "country": "Brasil",
+      "password": "teste1234"
     }
 
 POST: /register-service - essa rota ele vai registrar um usuário no banco e vai notificar no email do mesmo informando o cadastro.
@@ -34,7 +35,9 @@ POST: /register-service - essa rota ele vai registrar um usuário no banco e vai
         "neighborhood": "BUG",
         "city": "Bug",
         "state": "ES",
-        "country": "Brasil"
+        "country": "Brasil",
+        "password": "teste1234"
+
       }
 
 POST: /order-service - faz o registro do pedido do usuário, lembrando de passar o mesmo id do register, no id e o user_id do order, aqui ele vai criar outra tabela de pedidos e notificar o usuário por email o pedido feito, por isso é bom passar o id pra realizar a busca do usuário para notificação.

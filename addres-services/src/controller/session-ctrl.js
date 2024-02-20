@@ -35,12 +35,13 @@ class AddressController {
         number: yup.string().required(),
         cep: yup.string().required(),
         country: yup.string().required(),
+        password: yup.string().required(),
       });
 
       if (!(await schema.isValid(req.body))) {
         throw { status: 400, message: 'Validation Fails' };
       }
-      const { id, name, email, cpf, number, cep, country } = req.body;
+      const { id, name, email, cpf, number, cep, country, password } = req.body;
 
       //Busca o cep com a api do viacep
       const address = await AddressService.getAddress(cep);
@@ -57,6 +58,7 @@ class AddressController {
         city: address.localidade,
         state: address.uf,
         country,
+        password
       });
 
       return res.status(201).send({
@@ -72,6 +74,7 @@ class AddressController {
           city: address.localidade,
           state: address.uf,
           country,
+          password
         },
       });
     } catch (error) {

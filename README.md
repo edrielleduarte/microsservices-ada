@@ -55,6 +55,8 @@ O banco utilizado é o **mongoDB**. Para realizar a conexão, fiz pelo drives, q
 
 Acesse o: [Cloudamqp](https://customer.cloudamqp.com/login) e após clicar no RabbitMQ.
 
+O CloudAMQP oferece uma plataforma fácil de usar para hospedar, configurar e gerenciar instâncias do RabbitMQ na nuvem.
+
 Na pasta notification service é aonde está a configuração do envio das notificações por email, no arquivo .env na variavel: **EMAIL_USER** deve se passar o email que vai fazer o desparo, como sua identificação e o **EMAIL_PASS** a senha do seu email na qual você irá se identificar. Também tem a variável da url gerado pra conexão que tem que ser atribuido ao **AMQP_RABBITMQ_BASE_URL**
 
 - Ex da url: amqps://jetqippn:<suasenha>@toad.rmq.cloudamqp.com/jetqippn

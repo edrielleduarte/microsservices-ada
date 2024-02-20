@@ -1,6 +1,6 @@
 const connectionDB = require('../../../db/services/db.service');
-const connectRabbitPedido = require('../../../notification-service/src/services/order-smpt.send.service');
-const { AMQP_RABBITMQ_BASE_URL, EMAIL_USER, EMAIL_PASS } = process.env;
+const connectRabbit = require('../../../notification-service/src/services/rabbitmq.service');
+const { AMQP_RABBITMQ_BASE_URL } = process.env;
 
 class OrderService {
   static async create({ id, user_id, description }) {
@@ -23,19 +23,20 @@ class OrderService {
       O seu pedido: ${description}, foi realizado com sucesso!
       Agradecemos a preferência.
       Atenciosamente,
-      Equipe de Pedido`;
+      Equipe Ada Edrielle Pedido`;
 
       const solicitation = {
         email,
         messagem,
       };
 
+      const nomeFila = 'pedido ifood';
+
       //Conecta ao RabbitMQ para enviar a notificação por emai;
-      await connectRabbitPedido.connectRabbitPedido(
+      await connectRabbit.connectRabbitMQ(
         solicitation,
         AMQP_RABBITMQ_BASE_URL,
-        EMAIL_USER,
-        EMAIL_PASS,
+        nomeFila,
       );
     } catch (error) {
       return error;

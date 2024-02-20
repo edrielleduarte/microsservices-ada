@@ -43,6 +43,10 @@ const user = mongoose.model('user', {
     type: String,
     required: true,
   },
+  password: {
+    type: String,
+    required: true,
+  },
 });
 
 const pedido = mongoose.model('pedido', {
@@ -72,6 +76,7 @@ class ModelDB {
     city,
     state,
     country,
+    password
   }) {
     try {
       const userSchema = new user({
@@ -85,6 +90,7 @@ class ModelDB {
         city: city,
         state: state,
         country: country,
+        password: password,
       });
 
       await userSchema.save(userSchema);
