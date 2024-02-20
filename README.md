@@ -45,7 +45,7 @@ Foram utilizadas as seguintes dependencias:
 
 ## Banco de dados
 
-O banco utilizado é o **mongoDB**. Para realizar a conexão, fiz pelo drives, que utiliza essa url, na qual ele mostra pra copiar, segue um exemplo conforme abaixo:
+O banco utilizado é o **mongoDB**. Para realizar a conexão, fiz a conexão pela nuvem e ao realizar as etapas de conexão por nuvem, é gerado um link ao geraro o ip e ai é só copiar o drives que utiliza essa url, na qual ele mostra pra copiar, segue um exemplo conforme abaixo:
 
 `mongodb+srv://<user>:<password>@<seubanco>.u7oeiqe.mongodb.net/?retryWrites=true&w=majority`
 
