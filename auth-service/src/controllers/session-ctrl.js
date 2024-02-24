@@ -16,7 +16,7 @@ class SessionController {
 
       const user = await UserService.userExistsByEmail(req.body.email);
 
-      if (!user || !UserService.checkCpf(req.body.password, user?.password)) {
+      if (!user || !UserService.checkPassword(req.body.password, user?.password)) {
         throw { status: 401, message: 'Invalid Credentials' };
       }
 

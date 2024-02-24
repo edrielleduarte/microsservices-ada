@@ -5,7 +5,7 @@ class UserService {
     return connectionDB.findUserByEmail(email);
   }
 
-  static checkCpf(password, shouldMatchPassword) {
+  static checkPassword(password, shouldMatchPassword) {
     return password === shouldMatchPassword;
   }
 }
