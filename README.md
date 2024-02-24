@@ -62,7 +62,7 @@ O CloudAMQP oferece uma plataforma fácil de usar para hospedar, configurar e ge
 
 Na pasta notification service é aonde está a configuração do envio das notificações por email, no arquivo .env na variavel: **EMAIL_USER** deve se passar o email que vai fazer o desparo, como sua identificação e o **EMAIL_PASS** a senha do seu email na qual você irá se identificar. Também tem a variável da url gerado pra conexão que tem que ser atribuido ao **AMQP_RABBITMQ_BASE_URL**
 
-- Ex da url: amqps://jetqippn:suasenhaaqui@toad.rmq.cloudamqp.com/jetqippn
+- Ex da url: amqps://jetqippn:*suasenhaaqui*@toad.rmq.cloudamqp.com/jetqippn
 
       Lembrando que caso use gmail, ele tem uma segurança na qual impede o acesso de api devido expor a senha, para a segurança aconselho gerar uma senha de acesso pelo gmail, onde da essa possibilidade pra ate mesmo não expor sua senha pessoal.
 
