@@ -10,7 +10,7 @@ O objetivo do projeto é criar uma microsservices de um aplicativo de delivery c
 
   ![imagem02](/documents/imgs/02.png)
 
-No projeto segue 8 pastas na quais precisa ser executado o _npm run dev_ para sua funcionalidade, cada uma tem a suas portas definidas sendo:
+No projeto segue 8 pastas na quais precisa ser executado o **npm run dev** para sua funcionalidade, cada uma tem a suas portas definidas sendo:
 
 - porta 3001: Api Gateway
 - porta 3002: Addres Service
