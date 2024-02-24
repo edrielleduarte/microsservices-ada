@@ -14,12 +14,15 @@ No projeto segue 8 pastas na quais precisa ser executado o **npm run dev** para 
 
 - porta 3001: Api Gateway
 - porta 3002: Addres Service
-- porta 3003: DB // Não precisa subir obrigatoriamente, deixei pra caso queira fazer registro apartado ao banco.
+- porta 3003: DB
 - porta 3004: Register Service
 - porta 3005: Notification Service
 - porta 3006: Order Service
 - porta 3007: Auth Service
 - porta 3008: Validation User Service
+
+
+        OBS: A porta 3003 não precisa subir obrigatoriamente, deixei configurado pra teste de registro.
 
 ## Instalação
 
