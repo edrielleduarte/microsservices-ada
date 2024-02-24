@@ -14,7 +14,7 @@ No projeto segue 8 pastas na quais precisa ser executado o _npm run dev_ para su
 
 - porta 3001: Api Gateway
 - porta 3002: Addres Service
-- porta 3003: DB
+- porta 3003: DB // Não precisa subir necessariamente, deixei pra caso queira fazer registro.
 - porta 3004: Register Service
 - porta 3005: Notification Service
 - porta 3006: Order Service
@@ -45,7 +45,7 @@ Foram utilizadas as seguintes dependencias:
 
 ## Banco de dados
 
-O banco utilizado é o **mongoDB**. Para realizar a conexão, fiz a conexão pela nuvem e ao realizar as etapas de conexão por nuvem, é gerado um link ao geraro o ip e ai é só copiar o drives que utiliza essa url, na qual ele mostra pra copiar, segue um exemplo conforme abaixo:
+O banco utilizado é o **mongoDB**. Para realizar a conexão, fiz a conexão pela nuvem e ao realizar as etapas de conexão por nuvem, é gerado um link ao geraro o ip e ai é só copiar o drives que utiliza essa url. Segue um exemplo conforme abaixo:
 
 `mongodb+srv://<user>:<password>@<seubanco>.u7oeiqe.mongodb.net/?retryWrites=true&w=majority`
 
