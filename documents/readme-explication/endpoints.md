@@ -52,7 +52,7 @@ POST: /session - aqui é feito a busca do usuário da cadastrado no banco pelo e
 
       {
         "email": "teste@mail.com",
-        "cpf": "00000000000"
+        "password": "teste1234"
       }
 
 POST: /session-validate - aqui é passado no bearer token o token gerado na rota session pra autenticar e liberar a pesquisa por id dos dados do usuário.
