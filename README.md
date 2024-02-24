@@ -22,7 +22,7 @@ No projeto segue 8 pastas na quais precisa ser executado o **npm run dev** para 
 - porta 3008: Validation User Service
 
 
-  * **OBS: A porta 3003 não precisa subir obrigatoriamente, deixei configurado pra teste de registro.**
+  * **OBS: A porta 3003 do DB não precisa subir obrigatoriamente, deixei configurado pra teste de registro.**
 
 ## Instalação
 
